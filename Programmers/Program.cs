@@ -8,9 +8,61 @@ namespace Programmers
     {
         static void Main(string[] args)
         {
-            solution(new string[] { "muzi", "frodo", "apeach", "neo" }, new string[] { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" }, 2);
+            //solution(new string[] { "muzi", "frodo", "apeach", "neo" }, new string[] { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" }, 2);
 
-            LottoSolution(new int[] { 45, 4, 35, 20, 3, 9 }, new int[] { 20, 9, 3, 45, 4, 35 });
+            //LottoSolution(new int[] { 45, 4, 35, 20, 3, 9 }, new int[] { 20, 9, 3, 45, 4, 35 });
+
+            NumberToWordSolution("23four5six7");
+        }
+
+        public static int NumberToWordSolution(string s)
+        {
+            int answer = 0;
+
+            Dictionary<string, int> dic = new Dictionary<string, int>() { { "zero", 0 }, { "one", 1 } , { "two", 2 } , { "three", 3 } , { "four", 4 } ,
+                { "five", 5 } , { "six", 6 } , { "seven", 7 } , { "eight", 8 } , { "nine", 9 } };
+
+            string[] strs = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            string[] strs2 = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+            int i = 0;
+            int cnt = 0;
+
+            int l = s.Length;
+
+            while (l > 0)
+            {
+                if (int.TryParse(s.Substring(cnt, 1), out var number))
+                {
+                    answer = (10 * answer) + number;
+                    i = 0;
+                    cnt += 1;
+                    l -= 1;
+                    continue;
+                }
+                
+                if (l < strs[i].Length)
+                {
+                    i++;
+                    continue;
+                }
+
+                var substring = s.Substring(cnt, strs[i].Length);
+
+                if (strs[i].Equals(substring))
+                {
+                    answer = (10 * answer) + dic[substring];
+                    cnt += strs[i].Length;
+                    l -= strs[i].Length;
+                    i = 0;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return answer;
         }
 
         public static int[] LottoSolution(int[] lottos, int[] win_nums)
