@@ -8,6 +8,21 @@ namespace Programmers
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+
+
+        }
+
+        public int solution(int[] numbers)
+        {
+            int answer = 45;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                answer -= numbers[i];
+            }
+
+            return answer;
             //solution(new string[] { "muzi", "frodo", "apeach", "neo" }, new string[] { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" }, 2);
 
             //LottoSolution(new int[] { 45, 4, 35, 20, 3, 9 }, new int[] { 20, 9, 3, 45, 4, 35 });
