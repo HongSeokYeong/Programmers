@@ -10,15 +10,7 @@ namespace Programmers
         {
             Console.WriteLine("Hello World!");
 
-            KGetPrimeNumberSolution.solution(754352, 2);
-            //KGetPrimeNumberSolution.solution(1000000, 3);
-            //KGetPrimeNumberSolution.solution(1000000, 4);
-            //KGetPrimeNumberSolution.solution(1000000, 5);
-            //KGetPrimeNumberSolution.solution(1000000, 6);
-            //KGetPrimeNumberSolution.solution(1000000, 7);
-            KGetPrimeNumberSolution.solution(754352, 8);
-            //KGetPrimeNumberSolution.solution(1000000, 9);
-            KGetPrimeNumberSolution.solution(754352, 10);
+            ArcheryCompetitionSolution.solution(5, new int[] { 2, 1, 1, 1, 0, 0, 0, 0, 0, 0,0 });
         }        
 
         
